@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pc Hub</title>
+    <link rel="icon" type="image/x-icon" href="assets/jogos.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <section id="avaliar" class="section container">
+        <h2 class="text-center mb-4">🔍 Avalie Seu Setup Atual</h2>
+        <p class="text-center">Insira as configurações do seu PC e receba uma avaliação automática com dicas de melhorias baseadas em compatibilidade e desempenho.</p>
+        <form id="setupForm" class="row g-3">
+                <label for="cpu" class="form-label">Processador (ex.: Intel i5-12400)</label>
+                <input type="text" class="form-control" id="cpu" placeholder="Digite o modelo" list="listaProcessador">
+                <datalist id="listaProcessador"></datalist>
+
+                <label for="ram" class="form-label">Memória RAM (GB)</label>
+                <input type="number" class="form-control" id="ram" placeholder="Ex.: 16" list="listaMemoriaRam">
+                <datalist id="listaMemoriaRam"></datalist>
+            
+                <label for="gpu" class="form-label">Placa de Vídeo (ex.: RTX 3060)</label>
+                <input type="text" class="form-control" id="gpu" placeholder="Digite o modelo" list="listaGpu">
+                <datalist id="listaGpu"></datalist>
+            
+                <label for="storage" class="form-label">Armazenamento (GB/SSD)</label>
+                <input type="text" class="form-control" id="storage" placeholder="Ex.: 512 SSD" list="listaArmazenamento">
+                <datalist id="listaArmazenamento"></datalist>
+            
+                <label for="motherboard" class="form-label">Placa-Mãe (ex.: B450)</label>
+                <input type="text" class="form-control" id="motherboard" placeholder="Digite o modelo" list="listaPlacaMae">
+                <datalist id="listaPlacaMae"></datalist>
+            
+                <label for="psu" class="form-label">Fonte (Watts)</label>
+                <input type="number" class="form-control" id="psu" placeholder="Ex.: 650" list="listaFonte">
+                <datalist id="listaFonte"></datalist>
+            
+                <button type="button" class="btn-custom" onclick="evaluateSetup()">Avaliar Setup</button>        
+        </form>
+        <div id="evaluationResult" class="evaluation-result"></div>
+    </section>
+</body>
+<script src="js/script.js"></script>
+</html>
