@@ -1,5 +1,6 @@
+
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Poppins, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f3ecec;
@@ -29,7 +30,7 @@ nav a:hover {
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
-    
+
 }
 .nav-menu {
     list-style: none;
@@ -73,6 +74,12 @@ input {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    background: var(--primary);
+    transition: 0.3s;
+}
+.btn-custom:hover {
+  background: #1e5fd8;
+  transform: scale(1.05);
 }
 
 .evaluation-result {
@@ -82,7 +89,10 @@ input {
     background: #fafafa;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: 0.3s ease;
-    
+}
+.evaluation-result.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 .evaluation-result h3, 
 .evaluation-result h4 {
@@ -102,4 +112,127 @@ input {
   border: 0;
   border-top: 1px solid #ddd;
 }
+:root {
+  --primary: #2b7cff;
+  --secondary: #00c853;
+  --background: #f5f5f5;
+  --text-dark: #222;
+}
+body {
+  background: var(--background);
+  color: var(--text-dark);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.text-center {
+  text-align: center;
+}
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+
+/* ==== TELA INICIAL ==== */
+
+.home {
+  background-image: url("../assets/background.webp");
+  background-size: cover;         /* faz a imagem cobrir a tela */
+  background-repeat: no-repeat;   /* evita repetição */
+  background-position: center;    /* centraliza */
+  background-attachment: fixed;   /* efeito "parallax" (opcional) */
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #555;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--text-dark);
+}
+
+.hero h1 span {
+  color: var(--primary);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+  color: #555;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 40px 20px;
+}
+
+.card {
+  background: #ccb5b5;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 260px;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: 0.3s ease;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+
+}
+.card h3 {
+  margin-top: 15px;
+  font-size: 1.5rem;
+}
+.card p {
+  margin-top: 10px;
+  color: #555;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 700px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
 

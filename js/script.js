@@ -30,30 +30,6 @@ const listas = {
 
 Object.entries(listas).forEach(([id, valores]) => popularDatalist(id, valores));
 
-
-function evaluateSetup() {
-    const cpu = document.getElementById("cpu").value || "Não informado";
-    const ram = document.getElementById("ram").value || "Não informado";
-    const gpu = document.getElementById("gpu").value || "Não informado";
-    const storage = document.getElementById("storage").value || "Não informado";
-    const motherboard = document.getElementById("motherboard").value || "Não informado";
-    const psu = document.getElementById("psu").value || "Não informado";
-
-    const resultBox = document.getElementById("evaluationResult");
-
-    resultBox.innerHTML = `
-        <h3>💻 Resultado da Avaliação</h3>
-        <p><strong>Processador:</strong> ${cpu}</p>
-        <p><strong>Memória RAM:</strong> ${ram} GB</p>
-        <p><strong>Placa de Vídeo:</strong> ${gpu}</p>
-        <p><strong>Armazenamento:</strong> ${storage}</p>
-        <p><strong>Placa-mãe:</strong> ${motherboard}</p>
-        <p><strong>Fonte:</strong> ${psu}W</p>
-    `;
-
-    resultBox.classList.add("show");
-}
-
 function evaluateSetup() {
   const cpu = document.getElementById("cpu").value.toLowerCase();
   const ram = parseInt(document.getElementById("ram").value) || 0;
@@ -93,6 +69,10 @@ function evaluateSetup() {
 
   // Média ponderada
   const totalScore = Math.round((cpuScore + ramScore + gpuScore + storageScore + psuScore) / 5);
+    
+    // Salvar no localStorage
+  localStorage.setItem('ultimaAvaliacao', JSON.stringify({ cpu, ram, gpu, totalScore }));
+
 
   // --- Classificação textual ---
   let performanceText = "";
@@ -114,6 +94,12 @@ function evaluateSetup() {
     <h4>🏁 Desempenho Geral: <span style="color:${getColor(totalScore)};">${totalScore}/10</span></h4>
     <p>${performanceText}</p>
   `;
+  let recomendacao = "";
+    if (ram < 8) recomendacao += "Considere aumentar a memória RAM para pelo menos 8 GB.<br>";
+    if (gpuScore < 6) recomendacao += "Sua GPU é básica — uma RTX 3060 ou RX 6600 XT traria um bom salto.<br>";
+    if (psu < 500) recomendacao += "Fonte fraca: escolha uma com 600W ou mais.<br>";
+    resultBox.innerHTML += `<hr><h4>🔧 Sugestões de Upgrade:</h4><p>${recomendacao || "Seu setup está equilibrado!"}</p>`;
+
 
   resultBox.classList.add("show");
 }
