@@ -51,8 +51,43 @@ p a {
 p a:hover {
     text-decoration: underline;
 }
-.success-message {
-    color: green;
+.etapaCodigo {
+    display: none;
+    margin-top: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+p {
     text-align: center;
     margin-top: 15px;
+    font-size: 14px;
+    color: #555;
 }
+
+.success-message {
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#etapaCodigo {
+    margin-top: 15px;
+}
+
