@@ -3,51 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Hub - Inicio</title>
+    <meta name="description" content="PC Hub - Avalie, monte e otimize seu setup de PC. Descubra o desempenho da sua máquina e crie a configuração perfeita.">
+    <meta name="keywords" content="PC, hardware, setup, computador, montar PC, avaliar desempenho, compatibilidade">
+    <title>PC Hub - Sua Plataforma Completa para Setup de PC</title>
     <link rel="icon" type="image/x-icon" href="assets/jogos.png">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/avaliar.jpg" as="image">
+    <link rel="preload" href="assets/montar.jpg" as="image">
+    <link rel="preload" href="assets/cadastrar.jpg" as="image">
 </head>
 <body class="home">
-    <header>
-        <nav class="navbar">
+    <header role="banner">
+        <nav class="navbar" aria-label="Navegação principal">
             <div class="container nav-container">
-                <a href="index.html" class="nav-logo">PC Hub</a>
+                <a href="index.html" class="nav-logo" aria-label="PC Hub - Página inicial">
+                    <span class="logo-icon" aria-hidden="true">⚙️</span>
+                    PC Hub
+                </a>
+                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu principal">
+                    <span class="hamburger" aria-hidden="true"></span>
+                </button>
             </div>
         </nav>
     </header>
-    <main class="home">
-        <section class="hero">
-      <h1>Bem-vindo ao <span>PC Hub</span> 💻</h1>
-      <p>Descubra o desempenho do seu setup, monte um novo PC ou aprenda a otimizar sua máquina!</p>
-    </section>
 
-    <section class="cards-container">
-      <a href="avaliar.html" class="card">
-        <img src="assets/avaliar.jpg" alt="Avaliar setup">
-        <h3>Avaliar Setup</h3>
-        <p>Simule o desempenho do seu setup atual e veja se os componentes são compatíveis.</p>
-      </a>
+    <main class="main-home" role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 id="hero-title" class="hero-title">
+                        Bem-vindo ao <span class="highlight">PC Hub</span> 
+                        <span class="hero-emoji" aria-hidden="true">💻</span>
+                    </h1>
+                    <p class="hero-description">
+                        Descubra o desempenho do seu setup, monte um novo PC ou aprenda a otimizar sua máquina!
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-count="1000">0</span>
+                            <span class="stat-label">Setups Avaliados</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="500">0</span>
+                            <span class="stat-label">PCs Montados</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="200">0</span>
+                            <span class="stat-label">Configurações Cadastradas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <a href="montar.html" class="card">
-        <img src="assets/montar.jpg" alt="Montar PC">
-        <h3>Montar PC</h3>
-        <p>Monte sua máquina ideal com base em orçamento e compatibilidade.</p>
-      </a>
+        <!-- Features Grid -->
+        <section class="features" aria-labelledby="features-title">
+            <div class="container">
+                <h2 id="features-title" class="section-title visually-hidden">Nossos Serviços</h2>
+                
+                <div class="cards-container">
+                    <a href="avaliar.html" class="card feature-card" aria-labelledby="card-avaliar">
+                        <div class="card-icon" aria-hidden="true">
+                            <img src="assets/avaliar.jpg" alt="" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3 id="card-avaliar" class="card-title">Avaliar Setup</h3>
+                            <p class="card-description">
+                                Simule o desempenho do seu setup atual e verifique a compatibilidade entre os componentes.
+                            </p>
+                            <span class="card-cta">Começar Avaliação →</span>
+                        </div>
+                    </a>
 
-      <a href="cadastrar.html" class="card">
-        <img src="assets/cadastrar.jpg" alt="Cadastrar">
-        <h3>Cadastrar setup</h3>
-        <p>Adicione seu setup à nossa base de dados e ajude outros usuários a encontrarem configurações semelhantes.</p>
-      </a>
-    </section>
+                    <a href="montar.html" class="card feature-card" aria-labelledby="card-montar">
+                        <div class="card-icon" aria-hidden="true">
+                            <img src="assets/montar.jpg" alt="" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3 id="card-montar" class="card-title">Montar PC</h3>
+                            <p class="card-description">
+                                Monte sua máquina ideal com base no seu orçamento e garantia de compatibilidade total.
+                            </p>
+                            <span class="card-cta">Montar Agora →</span>
+                        </div>
+                    </a>
+
+                    <a href="cadastrar.html" class="card feature-card" aria-labelledby="card-cadastrar">
+                        <div class="card-icon" aria-hidden="true">
+                            <img src="assets/cadastrar.jpg" alt="" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3 id="card-cadastrar" class="card-title">Cadastrar Setup</h3>
+                            <p class="card-description">
+                                Adicione seu setup à nossa base e ajude outros usuários com configurações semelhantes.
+                            </p>
+                            <span class="card-cta">Cadastrar →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-title" class="cta-title">Pronto para otimizar seu setup?</h2>
+                    <p class="cta-description">
+                        Junte-se a milhares de entusiastas que já melhoraram seus PCs com nossas ferramentas.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="avaliar.html" class="btn btn-primary">Começar Agora</a>
+                        <a href="#como-funciona" class="btn btn-secondary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-    <div class="container footer-container">
-      <p>&copy; 2024 PC Hub. Todos os direitos reservados.</p>
-    </div>
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-icon" aria-hidden="true">⚙️</span>
+                        PC Hub
+                    </a>
+                    <p class="footer-description">
+                        Sua plataforma completa para avaliação, montagem e otimização de setups de PC.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Serviços</h4>
+                        <ul class="footer-list">
+                            <li><a href="avaliar.html">Avaliar Setup</a></li>
+                            <li><a href="montar.html">Montar PC</a></li>
+                            <li><a href="cadastrar.html">Cadastrar Setup</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Suporte</h4>
+                        <ul class="footer-list">
+                            <li><a href="ajuda.html">Ajuda</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                            <li><a href="sobre.html">Sobre Nós</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PC Hub. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 
+    <script src="js/home.js"></script>
 </body>
-
 </html>
